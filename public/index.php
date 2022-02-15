@@ -62,6 +62,3 @@ echo "<br>";
 
 
 $newObj("H:i");         //As obj function
-
-
-//commit
