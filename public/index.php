@@ -6,37 +6,41 @@ date_default_timezone_set('Europe/Moscow');
 
 
 
-class ObjectCreated {
+class ObjectCreated
+{
 
 
     private const SIMPLE_FORMAT = 'Y-m-d H:i:s';
 
     private static $objCreateTime;
 
-    public function __construct(){
+    public function __construct()
+    {
 
         $this->objCreateTime = new DateTime();
     }
 
 
-    public function showTime($format) {
-        if($format) {
+    public function showTime($format)
+    {
+        if ($format) {
             return $this->objCreateTime->format($format);
         } else {
             return $this->objCreateTime->format(ObjectCreated::SIMPLE_FORMAT);
-        } 
+        }
     }
 
-    public function __toString(){
+    public function __toString()
+    {
 
         return $this->objCreateTime->format(ObjectCreated::SIMPLE_FORMAT);
     }
 
 
-    public function __invoke($arg) {
+    public function __invoke($arg)
+    {
 
-            print_r($this->objCreateTime->format($arg));
-          
+        print_r($this->objCreateTime->format($arg));
     }
 }
 
@@ -60,10 +64,4 @@ echo "<br>";
 $newObj("H:i");         //As obj function
 
 
-
-
-
-
-
-
-
+//commit
